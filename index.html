@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi ki Doğdun!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Arka plan müziği -->
+    <audio id="bgMusic" src="sarki.mp3" loop></audio>
+
+    <!-- İlk Ekran: Başlatma -->
+    <div id="startScreen">
+        <button id="startBtn">bu sana benden 🎁</button>
+    </div>
+
+    <!-- İkinci Ekran: Lale ve Kaydır Yazısı -->
+    <div id="tulipScreen" class="hidden section">
+        <img src="lale.gif" alt="Açan Lale" class="tulip">
+        <p class="scroll-text">Aşşağı devam et ⬇️</p>
+    </div>
+
+    <!-- Üçüncü Ekran: Zarf -->
+    <div id="envelopeScreen" class="section">
+        <img src="zarf.png" alt="Zarf" id="envelope" class="vibrating hidden">
+    </div>
+
+    <!-- Dördüncü Ekran: Mesaj ve Form (Zarf açılınca görünecek) -->
+    <div id="messageScreen" class="hidden section">
+        <div class="message-card">
+            <h2>İyi ki doğdun!</h2>
+            <p>Buraya arkadaşın için hazırladığın o güzel metni yazabilirsin...</p>
+            
+            <!-- Formspree ile mail gönderme -->
+            <form action="https://formspree.io/f/SENIN_FORMSPREE_KODUN" method="POST" id="responseForm">
+                <textarea name="message" placeholder="Sen de düşüncelerini yaz..." required></textarea>
+                <input type="hidden" name="_next" value="https://senin-sitenin-adresi.com/tesekkurler.html"> <!-- Gönderdikten sonra yönleneceği sayfa (opsiyonel) -->
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
